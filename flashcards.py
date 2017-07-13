@@ -5,7 +5,7 @@ import os
 import random
 import sys
 
-divider = " : "
+divider = " / "
 
 file_r = open(sys.argv[1], 'rU')
 file_w = open("tmp.txt", 'w')
@@ -26,24 +26,22 @@ cards = file.readlines()
 file.close()
 random.shuffle(cards)
 
-print "\nq: quit program"
-print "d: delete card"
-print "\n+\n"
+print("\n/ press q to quit /")
+print("\n.\n")
+
 for c in cards:
     qa = c.split(divider)
     q = qa[0].strip()
     a = qa[1].strip()
-    print q
-    i = raw_input()
-    print a
-    i = raw_input()
+    print(q)
+    i = input()
     if i == 'q':
-        print "[quit program]\n"
         break
-    if i == 'd':
-        print "[card deleted]\n"
-        cards.remove(c)
-    print "+\n"
+    print(a)
+    i = input()
+    if i == 'q':
+        break
+    print(".\n")
 
 file = open(sys.argv[1], 'w')
 for c in cards:
