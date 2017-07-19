@@ -11,6 +11,8 @@ file_r = open(sys.argv[1], 'rU')
 file_w = open("tmp.txt", 'w')
 cards = file_r.readlines()
 
+random.shuffle(cards)
+
 for c in cards:
     if divider not in c:
         continue
@@ -24,26 +26,21 @@ os.rename("tmp.txt", sys.argv[1])
 file = open(sys.argv[1], 'rU')
 cards = file.readlines()
 file.close()
-random.shuffle(cards)
 
 print("\n/ press q to quit /")
 print("\n.\n")
 
 for c in cards:
-    qa = c.split(divider)
-    q = qa[0].strip()
-    a = qa[1].strip()
-    print(q)
-    i = input()
-    if i == 'q':
-        break
-    print(a)
-    i = input()
-    if i == 'q':
-        break
-    print(".\n")
+    card = c.split(divider)
 
-file = open(sys.argv[1], 'w')
-for c in cards:
-    file.write(c)
-file.close()
+    print(card[0].strip())
+    i = input()
+    if i == 'q':
+        break
+
+    print(card[1].strip())
+    i = input()
+    if i == 'q':
+        break
+
+    print(".\n")
