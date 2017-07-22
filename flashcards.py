@@ -8,7 +8,7 @@ import sys
 divider = " / "
 
 file_r = open(sys.argv[1], 'rU')
-file_w = open("tmp.txt", 'w')
+file_w = open("x.txt", 'w')
 cards = file_r.readlines()
 
 random.shuffle(cards)
@@ -21,7 +21,7 @@ for c in cards:
 file_r.close()
 file_w.close()
 os.remove(sys.argv[1])
-os.rename("tmp.txt", sys.argv[1])
+os.rename("x.txt", sys.argv[1])
 
 file = open(sys.argv[1], 'rU')
 cards = file.readlines()
@@ -32,6 +32,7 @@ print("\n.\n")
 
 for c in cards:
     card = c.split(divider)
+    random.shuffle(card)
 
     print(card[0].strip())
     i = input()
