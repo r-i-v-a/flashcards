@@ -5,7 +5,7 @@ import os
 import random
 import sys
 
-divider = " / "
+divider = " = "
 
 file_r = open(sys.argv[1], 'rU')
 file_w = open("x.txt", 'w')
