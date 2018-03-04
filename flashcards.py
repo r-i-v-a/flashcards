@@ -32,7 +32,6 @@ print("\n.\n")
 
 for c in cards:
     card = c.split(divider)
-    random.shuffle(card)
 
     print(card[0].strip())
     i = input()
